@@ -154,7 +154,4 @@ System.out.println(str1 == str2); //  false, 内存地址不同
 System.out.println(str1.equals(str2)); // true, 内容相同
 ```
 
-## 异常捕获
-
-![img.png](assets/exception.png)
 
