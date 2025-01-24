@@ -267,7 +267,7 @@ public class TestController {
     // 处理 GET /hello 请求
     @RequestMapping(value= "/hello")
     public String hello() {
-        return "Hello, World!"; // 返回视图（或者你可以返回一个字符串）
+        return "Hello, World!"; 
     }
 
     // 处理 GET /2025 请求
