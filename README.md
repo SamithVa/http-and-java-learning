@@ -249,3 +249,39 @@ Java的类型系统是静态的，类型检查在编译时进行，这可以减�
 不过泛型通过类型擦除机制工作，导致在运行时丧失具体类型信息。
 
 # 任务三 Spring Boot 
+
+## 第二节 用@Controller注解处理请求
+
+创建 controller
+```java
+package com.example.demo.controller;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class TestController {
+
+    // 处理 GET /hello 请求
+    @RequestMapping(value= "/hello")
+    public String hello() {
+        return "Hello, World!"; // 返回视图（或者你可以返回一个字符串）
+    }
+
+    // 处理 GET /2025 请求
+    @RequestMapping(value ="/2025")
+    public ResponseEntity<String> notFound() {
+        return new ResponseEntity<>("2025 has not come yet!", HttpStatus.NOT_FOUND); // 返回404错误和消息
+    }
+}
+```
+
+- GET `/hello`
+![img.png](assets/spring_boot_hello.png)
+
+- GET `/2025`
+![img.png](assets/spring_boot_2025.png)
+
+
