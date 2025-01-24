@@ -154,4 +154,98 @@ System.out.println(str1 == str2); //  false, 内存地址不同
 System.out.println(str1.equals(str2)); // true, 内容相同
 ```
 
+## 第四节 面向对象
 
+```java
+class Animal<T> {
+    public T name;
+
+    public Animal(T name) {
+        this.name = name;
+    }
+
+    public void say() {
+        System.out.println(name + " is saying");
+    }
+}
+
+class Dog extends Animal<String> implements Behavior {
+    public Dog(String name) {
+        super(name);
+    }
+
+    @Override
+    public void say() {
+        System.out.println(name); // 只输出名字
+    }
+
+    @Override
+    public void run() {
+        System.out.println(name + " is running");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println(name + " is sleeping");
+    }
+}
+
+class Cat extends Animal<String> implements Behavior {
+    public Cat(String name) {
+        super(name);
+    }
+
+    @Override
+    public void say() {
+        System.out.println(name); // 只输出名字
+    }
+
+    @Override
+    public void run() {
+        System.out.println(name + " is running");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println(name + " is sleeping");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog("Buddy");
+        Cat cat = new Cat("Whiskers");
+
+        // 调用每个对象的方法
+        dog.say();
+        dog.run();
+        dog.sleep();
+
+        cat.say();
+        cat.run();
+        cat.sleep();
+
+        // 调用静态方法
+        say(dog);
+        runAndSleep(dog);
+        say(cat);
+        runAndSleep(cat);
+    }
+
+   
+    public static void say(Animal<?> animal) {
+        animal.say();
+    }
+
+   
+    public static void runAndSleep(Behavior behavior) {
+        behavior.run();
+        behavior.sleep();
+    }
+}
+```
+
+Java的类型系统是静态的，类型检查在编译时进行，这可以减少运行时错误。泛型提高了代码的通用性和类型安全性。 
+不过泛型通过类型擦除机制工作，导致在运行时丧失具体类型信息。
+
+# 任务三 Spring Boot 
