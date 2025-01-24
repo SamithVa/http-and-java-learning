@@ -3,7 +3,7 @@ public class Main {
 
         // 1 数据类型与运算符 （一）
 
-        /*int a, c;
+        int a, c;
         boolean b;
         double d;
         a = 7;
@@ -23,11 +23,11 @@ public class Main {
         System.out.println(b);
         System.out.println(c);
         System.out.println(d);
-*/
+
 
         // 3 控制结构
 
-        /*for (int i=0; i<a-4; i++) {
+        for (int i=0; i<a-4; i++) {
             if (c % 2 != 0){
                 c++;
             }
@@ -68,7 +68,7 @@ public class Main {
         System.out.printf("combinations of (%d, %d) : " +  combinations(a+c, 10) + "\n", a+c, 10);
 
         // 6. 异常捕获
-//        factorial(-1);
+//      factorial(-1);
 
         // 7. 泛型容器与包装类型
         java.util.ArrayList<Character> arrayList = new java.util.ArrayList<Character>();
@@ -107,7 +107,7 @@ public class Main {
             throw new IllegalArgumentException("m must be smaller or equal to n");
         }
         return factorial(n) / ( factorial(n - m) * factorial(m)) ;
-    }*/
+    }
 
     }
 }
